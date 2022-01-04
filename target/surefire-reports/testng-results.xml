@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-12-30T06:51:16 CST" name="All Test Suite" finished-at="2021-12-30T06:51:36 CST" duration-ms="20366">
+    <groups>
+    </groups>
+    <test started-at="2021-12-30T06:51:16 CST" name="C:/Users/karap/IdeaProjects/XYZ_Bank_Genspark" finished-at="2021-12-30T06:51:36 CST" duration-ms="20366">
+      <class name="test.java.BankManagerTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:16 CST" name="setup" finished-at="2021-12-30T06:51:23 CST" duration-ms="7064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:23 CST" name="setWait" finished-at="2021-12-30T06:51:23 CST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="login()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:23 CST" name="login" finished-at="2021-12-30T06:51:25 CST" duration-ms="1987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:25 CST" name="setWait" finished-at="2021-12-30T06:51:25 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="addCustomer()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:25 CST" name="addCustomer" finished-at="2021-12-30T06:51:26 CST" depends-on-methods="test.java.BankManagerTests.login" duration-ms="1020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomer -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:26 CST" name="setWait" finished-at="2021-12-30T06:51:26 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="openAccounts()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:26 CST" name="openAccounts" finished-at="2021-12-30T06:51:27 CST" depends-on-methods="test.java.BankManagerTests.addCustomer" duration-ms="1053" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAccounts -->
+        <test-method signature="searchSection()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:27 CST" name="searchSection" finished-at="2021-12-30T06:51:29 CST" depends-on-methods="test.java.BankManagerTests.openAccounts" duration-ms="1646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchSection -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:27 CST" name="setWait" finished-at="2021-12-30T06:51:27 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method is-config="true" signature="quitTest()[pri:0, instance:test.java.BankManagerTests@231f98ef]" started-at="2021-12-30T06:51:36 CST" name="quitTest" finished-at="2021-12-30T06:51:37 CST" duration-ms="584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitTest -->
+      </class> <!-- test.java.BankManagerTests -->
+      <class name="test.java.CustomerTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:29 CST" name="setup" finished-at="2021-12-30T06:51:29 CST" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="navBar()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:29 CST" name="navBar" finished-at="2021-12-30T06:51:32 CST" duration-ms="2908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navBar -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:29 CST" name="setWait" finished-at="2021-12-30T06:51:29 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:32 CST" name="setWait" finished-at="2021-12-30T06:51:32 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="customerLogin()[pri:1, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:32 CST" name="customerLogin" finished-at="2021-12-30T06:51:32 CST" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerLogin -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:32 CST" name="setWait" finished-at="2021-12-30T06:51:32 CST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="depositSection()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:32 CST" name="depositSection" finished-at="2021-12-30T06:51:33 CST" depends-on-methods="test.java.CustomerTests.customerLogin" duration-ms="819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- depositSection -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:33 CST" name="setWait" finished-at="2021-12-30T06:51:33 CST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="withdrawalSection()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:33 CST" name="withdrawalSection" finished-at="2021-12-30T06:51:35 CST" depends-on-methods="test.java.CustomerTests.customerLogin" duration-ms="1847" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- withdrawalSection -->
+        <test-method is-config="true" signature="setWait()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:35 CST" name="setWait" finished-at="2021-12-30T06:51:35 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWait -->
+        <test-method signature="transactionSection()[pri:0, instance:test.java.CustomerTests@24569dba]" started-at="2021-12-30T06:51:35 CST" name="transactionSection" finished-at="2021-12-30T06:51:36 CST" depends-on-methods="test.java.CustomerTests.withdrawalSection" duration-ms="1524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transactionSection -->
+      </class> <!-- test.java.CustomerTests -->
+    </test> <!-- C:/Users/karap/IdeaProjects/XYZ_Bank_Genspark -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="test.listeners.TestListeners"/>
+    <listener class-name="test.listeners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" name="C:/Users/karap/IdeaProjects/XYZ_Bank_Genspark(failed)" verbose="0">
+    <classes>
+      <class name="test.java.CustomerTests">
+        <methods>
+          <include name="customerLogin"/>
+          <include name="quitTest"/>
+          <include name="withdrawalSection"/>
+          <include name="transactionSection"/>
+          <include name="setWait"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- test.java.CustomerTests -->
+    </classes>
+  </test> <!-- C:/Users/karap/IdeaProjects/XYZ_Bank_Genspark(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

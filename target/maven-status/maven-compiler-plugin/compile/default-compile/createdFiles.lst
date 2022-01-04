@@ -1,0 +1,5 @@
+test\pages\ManagerTestPageFactory.class
+test\java\BankManagerTests.class
+test\pages\CustomerTestPageFactory.class
+test\java\CustomerTests.class
+test\java\BaseTest.class

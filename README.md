@@ -1,1 +1,3 @@
-# genspark_XYZBank
+# Genspark Practice
+## QA Analyst
+### Testing Framework Foundations

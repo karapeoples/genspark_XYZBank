@@ -1,0 +1,11 @@
+test\listeners\TestListeners.class
+test\listeners\AnnotationTransformer.class
+test\utils\ExecUtils.class
+test\pages\ManagerTestPageFactory.class
+test\utils\LoadProperties.class
+test\listeners\RetryAnalyzer.class
+test\utils\DriverUtil.class
+test\java\BankManagerTests.class
+test\pages\CustomerTestPageFactory.class
+test\java\CustomerTests.class
+test\java\BaseTest.class
