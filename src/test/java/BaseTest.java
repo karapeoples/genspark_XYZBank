@@ -16,6 +16,7 @@ public class BaseTest {
         String dir = System.getProperty("user.dir");
         PropertyConfigurator.configure(dir + File.separator +"src" +File.separator +"test"+File.separator+"resources"+File.separator +"log4j.properties");
         driver = DriverUtil.getDriver();
+        driver.manage().window().maximize();
         String url = LoadProperties.nabProperty("URL");
         driver.get(url+"/login");
     }

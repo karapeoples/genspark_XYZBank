@@ -14,9 +14,22 @@
           <include name="withdrawalSection"/>
           <include name="transactionSection"/>
           <include name="setWait"/>
+          <include name="navBar"/>
+          <include name="depositSection"/>
           <include name="setup"/>
         </methods>
       </class> <!-- test.java.CustomerTests -->
+      <class name="test.java.BankManagerTests">
+        <methods>
+          <include name="addCustomer"/>
+          <include name="openAccounts"/>
+          <include name="quitTest"/>
+          <include name="setWait"/>
+          <include name="searchSection"/>
+          <include name="login"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- test.java.BankManagerTests -->
     </classes>
   </test> <!-- C:/Users/karap/IdeaProjects/XYZ_Bank_Genspark(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <listener class-name="test.listeners.TestListeners"></listener>
-        <listener class-name="test.listeners.AnnotationTransformer"></listener>
+        <listener class-name="test.listeners.TestListeners"/>
+        <listener class-name="test.listeners.AnnotationTransformer"/>
     </listeners>
     <test verbose="2"
           preserve-order="true"

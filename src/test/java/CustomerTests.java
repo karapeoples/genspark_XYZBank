@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.pages.CustomerTestPageFactory;
+import test.utils.ClickUtil;
 import test.utils.ExecUtils;
 
 import java.io.IOException;
@@ -40,14 +41,14 @@ public class CustomerTests extends BaseTest {
         List<WebElement> chooseCustomer = customerSelect.getOptions();
         for (WebElement ele : chooseCustomer) {
             if (ele.getText().equalsIgnoreCase(testData.get("TestInfo1"))) {
-                ele.click();
+                ClickUtil.clickEle(ele);
                 Assert.assertTrue(ele.isSelected());
             }
         }
 
         //Arrive at Customer Transactions Menu
         wait.until(ExpectedConditions.elementToBeClickable(CustomerTestPageFactory.getLoginButton()));
-        CustomerTestPageFactory.getLoginButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getLoginButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo2")));
         Assert.assertEquals(String.valueOf(CustomerTestPageFactory.getVerifyButtons().size()), testData.get("TestInfo3"));
     }
@@ -56,11 +57,11 @@ public class CustomerTests extends BaseTest {
     public void depositSection() throws IOException {
         //Deposits
         testData = ExecUtils.readExcel().get("depositSection");
-        CustomerTestPageFactory.getVerifyButtons().get(1).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(1));
         wait.until(ExpectedConditions.elementToBeClickable(CustomerTestPageFactory.getAmountInput()));
         CustomerTestPageFactory.getAmountInput().sendKeys(testData.get("TestInfo1"));
         WebElement depositButton = CustomerTestPageFactory.getLoginButton();
-        depositButton.click();
+        ClickUtil.clickEle(depositButton);
         wait.until(ExpectedConditions.visibilityOf(CustomerTestPageFactory.getSuccessMessage()));
         String successMessage = CustomerTestPageFactory.getSuccessMessage().getText();
         Assert.assertEquals(successMessage, testData.get("TestInfo2"));
@@ -70,33 +71,33 @@ public class CustomerTests extends BaseTest {
     public void withdrawalSection() throws IOException {
         //Withdrawal No Deposits
         testData = ExecUtils.readExcel().get("withdrawalSection");
-        CustomerTestPageFactory.getVerifyButtons().get(2).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(2));
         wait.until(ExpectedConditions.invisibilityOf(CustomerTestPageFactory.getSuccessMessage()));
         wait.until(ExpectedConditions.elementToBeClickable(CustomerTestPageFactory.getWithdrawInput()));
         CustomerTestPageFactory.getWithdrawInput().sendKeys(testData.get("TestInfo1"));
         WebElement withdrawButton = CustomerTestPageFactory.getLoginButton();
-        withdrawButton.click();
+        ClickUtil.clickEle(withdrawButton);
         wait.until(ExpectedConditions.visibilityOf(CustomerTestPageFactory.getSuccessMessage()));
         String successMessage = CustomerTestPageFactory.getSuccessMessage().getText();
         Assert.assertEquals(successMessage, testData.get("TestInfo2"));
 
         //Withdrawals with Deposits
-        CustomerTestPageFactory.getVerifyButtons().get(1).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(1));
         wait.until(ExpectedConditions.elementToBeClickable(CustomerTestPageFactory.getAmountInput()));
         CustomerTestPageFactory.getAmountInput().sendKeys(testData.get("TestInfo3"));
         WebElement depositButton = CustomerTestPageFactory.getLoginButton();
-        depositButton.click();
+        ClickUtil.clickEle(depositButton);
         CustomerTestPageFactory.getAmountInput().sendKeys(testData.get("TestInfo4"));
-        depositButton.click();
+        ClickUtil.clickEle(depositButton);
         CustomerTestPageFactory.getAmountInput().sendKeys(testData.get("TestInfo5"));
-        depositButton.click();
+        ClickUtil.clickEle(depositButton);
         wait.until(ExpectedConditions.visibilityOf(CustomerTestPageFactory.getSuccessMessage()));
-        CustomerTestPageFactory.getVerifyButtons().get(2).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(2));
         wait.until(ExpectedConditions.invisibilityOf(CustomerTestPageFactory.getSuccessMessage()));
         wait.until(ExpectedConditions.elementToBeClickable(CustomerTestPageFactory.getWithdrawInput()));
         CustomerTestPageFactory.getWithdrawInput().sendKeys(testData.get("TestInfo6"));
         withdrawButton = CustomerTestPageFactory.getLoginButton();
-        withdrawButton.click();
+        ClickUtil.clickEle(withdrawButton);
         wait.until(ExpectedConditions.visibilityOf(CustomerTestPageFactory.getSuccessMessage()));
         successMessage = CustomerTestPageFactory.getSuccessMessage().getText();
         Assert.assertEquals(successMessage, testData.get("TestInfo7"));
@@ -107,12 +108,12 @@ public class CustomerTests extends BaseTest {
     public void transactionSection() throws IOException {
         //Transactions
         testData = ExecUtils.readExcel().get("transactionSection");
-        CustomerTestPageFactory.getVerifyButtons().get(0).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(0));
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
-        CustomerTestPageFactory.getBackButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getBackButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo2")));
         Assert.assertFalse(driver.getCurrentUrl().contains(testData.get("TestInfo1")));
-        CustomerTestPageFactory.getVerifyButtons().get(0).click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getVerifyButtons().get(0));
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         Assert.assertFalse(driver.getCurrentUrl().contains(testData.get("TestInfo2")));
 
@@ -139,7 +140,7 @@ public class CustomerTests extends BaseTest {
         for (WebElement ele : CustomerTestPageFactory.getDateTimeInfo()) {
             dates.add(ele.getText());
         }
-        CustomerTestPageFactory.getSortLink().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getSortLink());
         ArrayList<String> reverseOrder = new ArrayList<>();
         for (WebElement ele : CustomerTestPageFactory.getDateTimeInfo()) {
             reverseOrder.add(ele.getText());
@@ -147,8 +148,7 @@ public class CustomerTests extends BaseTest {
         dates.sort(Comparator.reverseOrder());
         Assert.assertEquals(reverseOrder, dates);
 
-
-        CustomerTestPageFactory.getResetButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getResetButton());
         Assert.assertEquals(String.valueOf(CustomerTestPageFactory.getTransactionRows().size()), testData.get("TestInfo9"));
 
         //Search Inputs are Bugged
@@ -160,30 +160,30 @@ public class CustomerTests extends BaseTest {
         //NavBar
         testData = ExecUtils.readExcel().get("navBar");
         wait.until(ExpectedConditions.elementToBeClickable( new CustomerTestPageFactory(getDriver()).getCustomerButton()));
-        CustomerTestPageFactory.getCustomerButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getCustomerButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         Select customerSelect = new Select(CustomerTestPageFactory.getCustomerDD());
         List<WebElement> chooseCustomer = customerSelect.getOptions();
         for (WebElement ele : chooseCustomer) {
             if (ele.getText().equalsIgnoreCase(testData.get("TestInfo2"))) {
-                ele.click();
+                ClickUtil.clickEle(ele);
             }
         }
-        CustomerTestPageFactory.getLoginButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getLoginButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo3")));
-        CustomerTestPageFactory.getHomeButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getHomeButton());
         Assert.assertTrue(driver.getCurrentUrl().contains(testData.get("TestInfo4")));
-        CustomerTestPageFactory.getCustomerButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getCustomerButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo5")));
         chooseCustomer = customerSelect.getOptions();
         for (WebElement ele : chooseCustomer) {
             if (ele.getText().equalsIgnoreCase(testData.get("TestInfo6"))) {
-                ele.click();
+                ClickUtil.clickEle(ele);
             }
         }
-        CustomerTestPageFactory.getLoginButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getLoginButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo7")));
-        CustomerTestPageFactory.getLogoutButton().click();
+        ClickUtil.clickEle(CustomerTestPageFactory.getLogoutButton());
         Assert.assertTrue(driver.getCurrentUrl().contains(testData.get("TestInfo8")));
 
     }

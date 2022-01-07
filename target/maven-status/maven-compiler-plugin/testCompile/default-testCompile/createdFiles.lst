@@ -1,6 +1,7 @@
 test\listeners\TestListeners.class
 test\listeners\AnnotationTransformer.class
 test\utils\ExecUtils.class
+test\utils\ClickUtil.class
 test\pages\ManagerTestPageFactory.class
 test\utils\LoadProperties.class
 test\listeners\RetryAnalyzer.class

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import test.pages.ManagerTestPageFactory;
+import test.utils.ClickUtil;
 import test.utils.ExecUtils;
 
 
@@ -35,7 +36,7 @@ public class BankManagerTests extends BaseTest {
         Log.info("Login Process Started");
         testData = ExecUtils.readExcel().get("login");
         wait.until(ExpectedConditions.elementToBeClickable(new ManagerTestPageFactory(getDriver()).getManagerButton()));
-        ManagerTestPageFactory.getManagerButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getManagerButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         Assert.assertTrue(driver.getCurrentUrl().contains(testData.get("TestInfo1")));
     }
@@ -45,7 +46,7 @@ public class BankManagerTests extends BaseTest {
         //Add Customer
         testData = ExecUtils.readExcel().get("addCustomer");
         wait.until(ExpectedConditions.elementToBeClickable(ManagerTestPageFactory.getCustomerButton()));
-        ManagerTestPageFactory.getCustomerButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getCustomerButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         List<WebElement> inputs = ManagerTestPageFactory.getInputs();
         //Arrived to Section
@@ -56,7 +57,7 @@ public class BankManagerTests extends BaseTest {
         inputs.get(0).sendKeys(testData.get("TestInfo3"));
         inputs.get(1).sendKeys(testData.get("TestInfo4"));
         inputs.get(2).sendKeys(testData.get("TestInfo5"));
-        ManagerTestPageFactory.getSubmitButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getSubmitButton());
         wait.until(ExpectedConditions.alertIsPresent());
         String alertText = driver.switchTo().alert().getText();
         Assert.assertTrue(alertText.contains(testData.get("TestInfo6")));
@@ -69,7 +70,7 @@ public class BankManagerTests extends BaseTest {
         //Open Accounts
         testData = ExecUtils.readExcel().get("openAccounts");
         List<WebElement> inputs;
-        ManagerTestPageFactory.getOpenAccountsButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getOpenAccountsButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         inputs = ManagerTestPageFactory.getSelects();
         Assert.assertEquals(String.valueOf(inputs.size()), testData.get("TestInfo2"));
@@ -96,7 +97,7 @@ public class BankManagerTests extends BaseTest {
             }
         }
 
-        ManagerTestPageFactory.getSubmitButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getSubmitButton());
         wait.until(ExpectedConditions.alertIsPresent());
         String info = driver.switchTo().alert().getText();
         Assert.assertTrue(info.contains(testData.get("TestInfo5")));
@@ -109,7 +110,7 @@ public class BankManagerTests extends BaseTest {
         //Customers Search Section
         testData = ExecUtils.readExcel().get("searchSection");
         List<WebElement> inputs;
-        ManagerTestPageFactory.getOpenCustomersButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getOpenCustomersButton());
         wait.until(ExpectedConditions.urlContains(testData.get("TestInfo1")));
         inputs = ManagerTestPageFactory.getInputs();
         Assert.assertEquals(String.valueOf(inputs.size()), testData.get("TestInfo2"));
@@ -124,13 +125,13 @@ public class BankManagerTests extends BaseTest {
         inputs.get(0).clear();
         int startList = rows.size();
         inputs.get(0).sendKeys(testData.get("TestInfo4"));
-        ManagerTestPageFactory.getDeleteButton().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getDeleteButton());
         inputs.get(0).clear();
         rows = ManagerTestPageFactory.getTableRows();
         Assert.assertEquals(startList - 1, rows.size());
 
         //Customer Search Sort First Name
-        ManagerTestPageFactory.getFirstNameSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getFirstNameSort());
         List<WebElement> firstNames = ManagerTestPageFactory.getFirstNameFields();
         ArrayList<String> firstNamesArr = new ArrayList<>();
         for (WebElement el : firstNames) {
@@ -146,12 +147,12 @@ public class BankManagerTests extends BaseTest {
         orderedFirstNames.sort(Comparator.reverseOrder());
         Assert.assertEquals(firstNamesArr, orderedFirstNames);
 
-        ManagerTestPageFactory.getFirstNameSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getFirstNameSort());
         Assert.assertEquals(firstNamesArr,orderedFirstNames);
 
 
         //Customer Search Last Names
-        ManagerTestPageFactory.getLastNameSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getLastNameSort());
         List<WebElement> lastNames = ManagerTestPageFactory.getLastNameFields();
         ArrayList<String> lastNamesArr = new ArrayList<>();
         for (WebElement el : lastNames) {
@@ -167,11 +168,11 @@ public class BankManagerTests extends BaseTest {
         orderedLastNames.sort(Comparator.reverseOrder());
         Assert.assertEquals(lastNamesArr, orderedLastNames);
 
-        ManagerTestPageFactory.getLastNameSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getLastNameSort());
         Assert.assertEquals(lastNamesArr, orderedLastNames);
 
         //Post Code Sort
-        ManagerTestPageFactory.getPostSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getPostSort());
         List<WebElement> postCodes = ManagerTestPageFactory.getPostCodeFields();
         ArrayList<String> postCodesArr = new ArrayList<>();
         for (WebElement el : postCodes) {
@@ -187,7 +188,7 @@ public class BankManagerTests extends BaseTest {
         orderedPostCodes.sort(Comparator.reverseOrder());
         Assert.assertEquals(postCodesArr, orderedPostCodes);
 
-        ManagerTestPageFactory.getPostSort().click();
+        ClickUtil.clickEle(ManagerTestPageFactory.getPostSort());
         Assert.assertEquals(postCodesArr, orderedPostCodes);
 
     }

@@ -13,9 +13,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import test.utils.DriverUtil;
 import test.utils.LoadProperties;
-import static test.utils.DriverUtil.getDriver;
 
+import static test.utils.DriverUtil.getDriver;
 
 
 public class TestListeners implements ITestListener {
@@ -49,7 +50,7 @@ public class TestListeners implements ITestListener {
         SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
         String methodName = result.getName();
         if(!result.isSuccess()){
-            File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
             try{
                 String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath() +
                         "failedScreenShots";
