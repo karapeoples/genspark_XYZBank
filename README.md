@@ -17,7 +17,7 @@ The automation suite targets the **XYZ Bank demo application**, commonly used fo
 - ✅ **Retry logic** and **listeners** for improved test stability
 - ✅ Configurable test environment via properties files
 - ✅ Automated **Surefire + TestNG reports**
-- ✅ Supporting documentation artifact: `TestInfoBook.xlsx.`
+- ✅ Supporting documentation artifact: `TestInfoBook.xlsx`
 
 ---
 
@@ -69,12 +69,12 @@ After execution, reports are generated under:
 target/surefire-reports/
 ```
 
-* These reports include: *
+**These reports include:**
 
-* execution summaries
-* passed/failed tests
-* stack traces for debugging
-* execution timing
+- execution summaries
+- passed/failed tests
+- stack traces for debugging
+- execution timing
 
 TestNG HTML reports can be opened locally to review detailed results.
 
@@ -99,29 +99,27 @@ This repository also includes a planning/reference artifact:
 TestInfoBook.xlsx
 ```
 
-* This workbook can be used to track: *
+**This workbook can be used to track:**
 
-* test scenarios
-* expected results
-* execution notes
-* potential automation expansion
+- test scenarios
+- expected results
+- execution notes
+- potential automation expansion
 
 ## Why This Repo Is Pinned
 
-* This project demonstrates: *
+**This project demonstrates:**
 
-* structured UI automation architecture
-* Page Object design
-* reusable testing utilities
-* automated reporting
-* documentation habits within automation projects
+- structured UI automation architecture
+- Page Object design
+- reusable testing utilities
+- automated reporting
+- documentation habits within automation projects
 
 It complements my technical documentation portfolio by showing how I structure and document test automation systems.
 
-Author
+## Author
 
 Kara R. Peoples
-
 📫 karaepeoples.dev@gmail.com
-
 💼 [LinkedIn](https://www.linkedin.com/in/karapeoples)
