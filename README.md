@@ -22,7 +22,6 @@ The automation suite targets the **XYZ Bank demo application**, commonly used fo
 ---
 
 ## Project Structure
-## Project Structure
 
 ```
 src/test/java
@@ -122,5 +121,7 @@ It complements my technical documentation portfolio by showing how I structure a
 Author
 
 Kara R. Peoples
+
 📫 karaepeoples.dev@gmail.com
+
 💼 [LinkedIn](https://www.linkedin.com/in/karapeoples)
