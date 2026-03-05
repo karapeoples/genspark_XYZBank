@@ -121,5 +121,7 @@ It complements my technical documentation portfolio by showing how I structure a
 ## Author
 
 Kara R. Peoples
+
 📫 karaepeoples.dev@gmail.com
+
 💼 [LinkedIn](https://www.linkedin.com/in/karapeoples)
