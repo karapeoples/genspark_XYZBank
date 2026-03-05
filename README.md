@@ -1,5 +1,5 @@
 # XYZ Bank Test Automation Framework
-### GenSpark Training Project (Java + TestNG)
+### Test Automation Framework — GenSpark Training (Java + TestNG)
 
 This repository contains a **UI test automation framework built during GenSpark training** using **Java**, **TestNG**, and the **Page Object pattern**.
 
